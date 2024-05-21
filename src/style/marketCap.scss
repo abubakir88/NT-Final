@@ -32,7 +32,9 @@
       td {
         color: #fff !important;
         background-color: transparent !important;
-
+        p {
+          cursor: pointer;
+        }
         div {
           display: flex;
           align-items: center;
