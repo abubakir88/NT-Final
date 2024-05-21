@@ -1,0 +1,16 @@
+.btn_data {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  button {
+    padding: 8px 44px;
+    border: 1px solid #87ceeb;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

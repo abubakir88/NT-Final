@@ -1,0 +1,68 @@
+.bg-img {
+  background-image: url(../../public/97f154adfd88d0e48d9a7fc87e5ab035.jfif);
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 450px;
+  .texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 54px;
+    padding-bottom: 20px;
+    h1 {
+      color: #87ceeb;
+      font-size: 60px;
+      letter-spacing: -0.5;
+    }
+    p {
+      color: #a9a9a9;
+    }
+  }
+  .carousel {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    img {
+      margin-left: 90px;
+    }
+    p {
+      color: #fff;
+    }
+  }
+}
+
+.slick-dots li button:before {
+  color: white !important; /* Oq rang */
+}
+
+.slick-dots li.slick-active button:before {
+  color: white; /* Faol nuqta oq rangda */
+}
+
+.legend {
+  color: white; /* Title (legend) uchun oq rang */
+  text-align: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Yaxshi ko'rinish uchun fon qo'shildi */
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px; /* Title uchun yuqoridan joy */
+  width: 100%;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}

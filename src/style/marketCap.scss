@@ -1,0 +1,121 @@
+.info {
+  background-color: #15171b;
+  height: 100vh;
+  text-align: center;
+  .search {
+    padding: 10px 0;
+    h1 {
+      font-size: 34px;
+      letter-spacing: 0.25px;
+      font-weight: 400;
+      color: #fff;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      background-color: transparent;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      color: #fff;
+    }
+  }
+  table {
+    border-radius: 6px;
+    overflow: hidden;
+    thead {
+      tr th {
+        background-color: #87ceeb;
+      }
+    }
+    tbody tr {
+      align-items: center;
+      td {
+        color: #fff !important;
+        background-color: transparent !important;
+
+        div {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          img {
+            width: 50px;
+          }
+          div {
+            display: block;
+            line-height: 10px;
+            span {
+              font-size: 14px;
+              color: #a9a9a9;
+            }
+          }
+        }
+      }
+      // th {
+      //   color: #fff !important;
+      //   background-color: transparent !important;
+      //   .crypto-img {
+      //     display: flex;
+      //     align-items: center;
+      //     img {
+      //       width: 60px;
+      //     }
+      //     .crypto-texts {
+      //       h6 {
+      //       }
+      //       p {
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
+  Header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination li a {
+  display: block;
+  padding: 10px 15px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.pagination li a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination li.active a {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination li.disabled a {
+  color: #ddd;
+  pointer-events: none;
+}
+
+.pagination li button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
