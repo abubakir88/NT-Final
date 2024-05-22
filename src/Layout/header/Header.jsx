@@ -40,7 +40,7 @@ const Header = ({ watchList, removeFromWatchList }) => {
       </header>
       {isSidebarOpen && (
         <div className="sidebar">
-          <button className="close" onClick={toggleSidebar}>
+          <button className="close p-3" onClick={toggleSidebar}>
             <IoExitOutline />
           </button>
           <h3>Your Watch List</h3>

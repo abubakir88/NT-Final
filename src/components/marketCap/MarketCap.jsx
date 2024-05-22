@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../style/marketCap.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IoEyeSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import Header from "../../Layout/header/Header";
 import { ToastContainer, toast } from "react-toastify";
@@ -16,6 +16,8 @@ const MarketCap = () => {
   const itemsPerPage = 5;
   const [search, setSearch] = useState("");
   const [watchList, setWatchList] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const url =
@@ -62,6 +64,10 @@ const MarketCap = () => {
     notify("Removed from watch list.");
   };
 
+  const handleRowClick = (cryptoId) => {
+    navigate(`/detail/${cryptoId}`);
+  };
+
   return (
     <div className="info">
       <Header watchList={watchList} removeFromWatchList={removeFromWatchList} />
@@ -94,24 +100,28 @@ const MarketCap = () => {
 
           <tbody>
             {currentPageData.map((crypto) => (
-              <tr key={crypto.id}>
+              <tr
+                key={crypto.id}
+                onClick={() => handleRowClick(crypto.id)}
+                style={{ cursor: "pointer" }}
+              >
                 <td className="text-start">
                   <div className="d-flex">
-                    <Link
-                      className="d-flex text-white text-justify gap-2 align-items-center"
-                      to={`/detail/${crypto.id}`}
-                    >
-                      <img src={crypto.image} alt={crypto.name} scope="row" />
-                      <div className="next_to-img">
-                        <p>{crypto.symbol.toUpperCase()}</p>
-                        <span>{crypto.name}</span>
-                      </div>
-                    </Link>
+                    <img src={crypto.image} alt={crypto.name} scope="row" />
+                    <div className="next_to-img">
+                      <p>{crypto.symbol.toUpperCase()}</p>
+                      <span>{crypto.name}</span>
+                    </div>
                   </div>
                 </td>
                 <td>{crypto.current_price}</td>
                 <td>
-                  <p onClick={() => addToWatchList(crypto)}>
+                  <p
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      addToWatchList(crypto);
+                    }}
+                  >
                     <IoEyeSharp
                       style={{
                         width: 20,
