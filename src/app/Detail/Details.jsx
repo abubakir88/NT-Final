@@ -19,7 +19,7 @@ const Details = () => {
         const res = await axios.get(api);
         const data = await response.data;
         setChartData(res.data?.prices);
-        console.log(res.data);
+        // console.log(res.data);
         setCrypto(data);
       } catch (error) {
         console.log("error", error);
@@ -28,7 +28,7 @@ const Details = () => {
     fetchData();
   }, [id]);
 
-  console.log(chartData);
+  // console.log(chartData);
 
   return (
     <div className="main">
