@@ -19,6 +19,15 @@ const MarketCap = () => {
 
   const navigate = useNavigate();
 
+  // Load watch list from localStorage when the component mounts
+  useEffect(() => {
+    const savedWatchList = localStorage.getItem("watchList");
+    if (savedWatchList) {
+      setWatchList(JSON.parse(savedWatchList));
+    }
+  }, []);
+
+  // Fetch crypto data
   useEffect(() => {
     const url =
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=gecko_desc&per_page=40&page=1&sparkline=false&price_change_percentage=24h";
@@ -33,6 +42,11 @@ const MarketCap = () => {
     };
     fetchData();
   }, []);
+
+  // Save watch list to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("watchList", JSON.stringify(watchList));
+  }, [watchList]);
 
   const handlePageClick = (event) => {
     setCurrentPage(event.selected);
